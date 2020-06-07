@@ -34,6 +34,26 @@ util$Timestamp <- NULL
 head(util)
 util <- util[, c(4,1,2,3)]
 
+## Working with a list
+summary(util)
+RL1 <- util[util$Machine == "RL1",]
+summary(RL1)
+RL1$Machine <- factor(RL1$Machine)
+
+## Construct list
+util_stats_rl1 <- c(min(RL1$Utilization, na.rm = TRUE),
+                    mean(RL1$Utilization, na.rm = TRUE),
+                    max(RL1$Utilization, na.rm = TRUE))
+util_stats_rl1
+
+## Performance of machine below 90%
+util_under_90_flag <- length(which(RL1$Utilization < 0.90)) > 0
+list_rl1 <- list("RL1", util_stats_rl1, util_under_90_flag)
+list_rl1
+
+## Naming components of a list
+names(list_rl1)
+names(list_rl1) <- c("Machine", "Stats", "lowThreshold")
 
 
 
