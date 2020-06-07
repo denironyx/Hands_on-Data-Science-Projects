@@ -27,8 +27,12 @@ tail(util)#Considering it's a month data, we can easily find the what data forma
 ?POSIXct
 util$PosixTime <- as.POSIXct(util$Timestamp, format = "%d/%m/%Y %H:%M")
 head(util)
+summary(util)
 
-
+## Rearrange the columns in a df
+util$Timestamp <- NULL
+head(util)
+util <- util[, c(4,1,2,3)]
 
 
 
