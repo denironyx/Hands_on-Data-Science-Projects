@@ -84,8 +84,9 @@ list_rl1$UnknownHours <- RL1[is.na(RL1$Utilization), "PosixTime"]
 list_rl1[4] <- NULL
 list_rl1
 
-
-
+## Adding dataframe for the machine
+list_rl1$Data <- RL1
+list_rl1
 
 
 
