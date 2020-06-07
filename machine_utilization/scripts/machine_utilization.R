@@ -69,14 +69,20 @@ list_rl1[[2]][2]
 list_rl1[[2]][3]
 
  
+### Adding and deleting list components
+list_rl1
+list_rl1[4] <- "New Information"
+list_rl1
 
+# Another way to add a component
+# Vector: All hours where utilization is unknow (NA's)
+RL1[is.na(RL1$Utilization), "PosixTime"]
 
+list_rl1$UnknownHours <- RL1[is.na(RL1$Utilization), "PosixTime"]
 
-
-
-
-
-
+## Removing a component
+list_rl1[4] <- NULL
+list_rl1
 
 
 
