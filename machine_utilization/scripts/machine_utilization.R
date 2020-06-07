@@ -55,6 +55,43 @@ list_rl1
 names(list_rl1)
 names(list_rl1) <- c("Machine", "Stats", "lowThreshold")
 
+## Extracting components of a list
+#[] -  will always return a list
+#[[]] - will return the actual object
+list_rl1
+list_rl1[1]
+list_rl1[[1]]
+
+typeof(list_rl1[2])
+list_rl1[[2]][2]
+
+## The 3rd element of the vector (max utilization)
+list_rl1[[2]][3]
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
