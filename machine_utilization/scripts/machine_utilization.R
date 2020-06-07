@@ -24,3 +24,22 @@ head(util,12)
 
 ## Handling Date Time in R
 tail(util)#Considering it's a month data, we can easily find the what data format it is in (EUROPEAN or America)
+?POSIXct
+util$PosixTime <- as.POSIXct(util$Timestamp, format = "%d/%m/%Y %H:%M")
+head(util)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
