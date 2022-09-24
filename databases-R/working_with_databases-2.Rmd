@@ -12,7 +12,7 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 ## Who is Dennis Irorere? 
-![Dennis is a Data Scientist at Spacee,Inc](img/Dennis Portrait3.jpg){width=50%}
+![Data Scientist at Spacee,Inc](img/Dennis Portrait3.jpg){width=50%}
 
 ## What is a database?
 ![](img/question.jpeg){height=100%}
