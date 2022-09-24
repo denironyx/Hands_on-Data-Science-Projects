@@ -26,7 +26,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## SQL & Relational database
 
-- SQL - Structured Query Language, is an incredible tool for querying and managing relational databases.
+- SQL - Structured Query Language, is an incredible tool for querying and managing `relational databases`.
 
 - A relational database is a collection of information that organizes data in predefined relationships where data is stored in one or more tables of columns and rows.
 ![chinook diagram](img/c4c5c676-41fc-42d5-ab92-b109565cb13b-1-768x432.png){width=70%}
@@ -37,47 +37,54 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 ## Why do we need a Database?
-- Databases support good data access because
+- Databases can scale as your business grows
 - Large volumes of data can be stored in one place
 - Multiple users can read and modify the data at the same time
 - Databases are searchable and sortable, so the data you need can be found quick and easily
+- Databases allow you to avoid redundant information
 
 ## Who is a database users?
 
-A database user is a person who will run applications to perform specific database operations. He/she can also directly query the database using interactive querying facilities for reporting purposes.
+A database user is a person who runs applications to perform specific database operations. He/she can also directly query the database using interactive querying facilities for reporting purposes.
 
 ## Roles in Data Management
-- The information architect (or information analyst) designs the conceptual data model
-- The database designer translate the conceptual data model into a logical data model
-- The data owner has the authority to ultimately decide on the acess to, and usage of, the data.
-- The database administrator (DBA) is responsible for the implementation and monitoring of the database
-- The data analyst, business analyst, and data scientist responsible for analyzing the data to provide new insight about customer behaviour using analytical techniques and methods 
+- The `information architect` (or information analyst) designs the conceptual data model
+- The `database designer` translate the conceptual data model into a logical data model
+- The `data owner` has the authority to ultimately decide on the acess to, and usage of, the data.
+- The `database administrator` (DBA) is responsible for the implementation and monitoring of the database
+- The `data analyst`, `business analyst`, and `data scientist` responsible for analyzing the data to provide new insight about customer behaviour using analytical techniques and methods 
 
 ## Popular Languages for Data Science
 ![](img/image9_ezal9o.png)
 
-## Difficulties of Working with Large Datasets
-As described by Edgar Ruiz, when connecting to a database in R there is only a “small conduit” between R and the database that often prevents us from being able to work with the data as fast as we can work with local data frames. In order to work around this there have historically been two different options:
+## Working with Large Datasets in R
+As described by Edgar Ruiz, when connecting to a database in R there is only a “small conduit” between R and the database that often prevents us from being able to work with the data as fast as we can work with local data frames. 
+
+In order to work around this there have historically been two different options:
 
 - The first option is to take data from the database in small chunks, save it in R memory, and then analyze it later
 - A different option is to load all of the data into R
 
 ## Who has done this in the past?
-![source - rstudio](img/today.png){width=100%}
+![source: Rstudio](img/today.png){width=100%}
 
 ## Major problem with those methods
 
-The main problem with these methods is that they are trying to perform the computations locally in R as opposed to performing computations directly on the data in the database using the SQL Engine. Ideally, we want to be able to analyze the data in place.
+The main problem with the methods earlier is that we are trying to perform the computations locally in R as opposed to performing computations directly on the data in the database using the SQL Engine. 
 
-As R programmers, we of course want to write solely R code. Won't we?
+Ideally, we want R to somehow send a SQL query over to the database, perform the query using the powerful SQL engine, and then have the database send back an R data frame that we can manipulate in R.
+
+As R programmers, we of course want to write solely R code. Don't we?
 
 
 ## Using dplyr to query the database
 
-![source- rstudio](img/better.png){width=100%}
+![source: Rstudio](img/better.png){width=100%}
 
 ## Using dplyr to Query the Database
-The `dplyr` package allows for better communications with external databases. Enabling us to do the following:
+The `dplyr` package allows for better communications with external databases. 
+
+Enabling us to do the following:
 
 - Push the computation to the database, allowing us to avoid bringing large amounts of data in the database into the R environment unless we specifically ask R to do it.
 - We can use pipe code, which greatly enhances the readability of the code
@@ -203,7 +210,8 @@ Hadley Wickham, the author of dplyr explains:
 When working with databases, dplyr tries to be as lazy as possible:
 
 - It never pulls data into R unless you explicitly ask for it.
-- It delays doing any work until the last possible moment - it collects together everything you want to do and then sends it to the database in one step
+- It delays doing any work until the last possible moment 
+- It collects together everything you want to do and then sends it to the database in one step
 
 When you construct a `dplyr` query, you can connect multiple verbs into a single pipeline. For example, we combined the filter() and select() verbs using the %>% pipe.
 
@@ -240,9 +248,13 @@ employees %>%
   theme_classic()
 ```
 
+## Any Questions?
+![](img/foire-questions-automobiles.jpg)
 
 ## References
 - https://www.jeffdoser.com/files/for875/_book/databases-and-r.html
 - https://rviews.rstudio.com/2017/05/17/databases-using-r/
 - https://datacarpentry.org/R-ecology-lesson/05-r-and-databases.html
 
+## Until Next time
+![](img/thank-you.jpg){width=100%}
