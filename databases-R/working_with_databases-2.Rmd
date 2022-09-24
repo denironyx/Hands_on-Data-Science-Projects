@@ -11,6 +11,8 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+## Who is Dennis Irorere? 
+![Dennis is a Data Scientist at Spacee,Inc](img/Dennis Portrait3.jpg){width=50%}
 
 ## What is a database?
 ![](img/question.jpeg){height=100%}
@@ -167,7 +169,6 @@ employees %>%
 ## SQL translation
 Relational databases typically use a special-purpose language, Structured Query Language (SQL), to manage and query data.
 
-For example, the following SQL query returns the first 10 rows from the surveys table:
 ```
 SELECT 
   *
@@ -214,10 +215,10 @@ salesSupportAgents
 
 As we’ve seen, for simple tasks, and even many complex tasks, dplyr syntax can be used to query external databases.
 
-## Using dbplot
+## Using dbplot for visualization
 We can use the same chinook database from SQLite we were using above. Suppose we desire to see how many types of each employee there are in the database. We can produce a barplot to show this.
 
-```
+```{r,out.width="70%"}
 library(dbplot)
 employees %>% 
   dbplot_bar(Title)
@@ -225,23 +226,13 @@ employees %>%
 
 ## Customized dbplot
 ```{r, echo=TRUE, out.width="70%"}
+
 library(ggplot2)
 employees %>% 
   dbplot_bar(Title) + 
   labs(title = "Employee Types") + 
   ylab("Count") + 
   theme_classic()
-```
-
-## Creating a new SQLite database
-So far, we have used a previously prepared SQLite database. But we can also use R to create a new database, e.g. from existing csv files. Let’s recreate the mammals database that we’ve been working with, in R. First let’s download and read in the csv files. We’ll import tidyverse to gain access to the read_csv() function.
-
-```
-download.file("https://ndownloader.figshare.com/files/3299483",
-              "data_raw/species.csv")
-
-library(readr)
-species <- read_csv("species.csv")
 ```
 
 
