@@ -107,7 +107,7 @@ library(dplyr)
 library(dbplyr)
 ```
 
-## Download Chinook databse and Connect to the database
+## Download Chinook database and Connect to the database
 
 ```
 setwd("C:/Users/Dee/root/Projects/basic_projects/Hands_on-DataScience/databases-R")
@@ -140,7 +140,7 @@ tbl(chinook, sql("SELECT * FROM employees LIMIT 100"))
 ```
 With this approach you can use SQL queries if you are comfortable with SQL
 
-## Querying the database with dply Syntax
+## Querying the database with dplyr Syntax
 One of the strengths of `dplyr` is that the same operation can be done using `dplyr`’s verbs instead of writing SQL. First, we select the table on which to do the operations by creating the `employee` object, and then we use the standard `dplyr` syntax as if it were a data frame.
 
 ```{r, echo = TRUE}
@@ -153,7 +153,7 @@ In this case, the `employees` object behaves like a data frame. Several function
 ## Lets use familiar `dplyr` commands to query the database
 
 ```
-head(employees, n = 10)
+head(employees, n = 8)
 ```
 
 ```{r, echo = TRUE}

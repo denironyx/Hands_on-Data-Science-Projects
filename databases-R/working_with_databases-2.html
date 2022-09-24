@@ -3326,7 +3326,7 @@ slide:not(.current) .plotly.html-widget{
 library(dplyr)
 library(dbplyr)</pre>
 
-</article></slide><slide class=""><hgroup><h2>Download Chinook databse and Connect to the database</h2></hgroup><article  id="download-chinook-databse-and-connect-to-the-database">
+</article></slide><slide class=""><hgroup><h2>Download Chinook database and Connect to the database</h2></hgroup><article  id="download-chinook-database-and-connect-to-the-database">
 
 <pre >setwd(&quot;C:/Users/Dee/root/Projects/basic_projects/Hands_on-DataScience/databases-R&quot;)
 url &lt;-  &#39;https://www.sqlitetutorial.net/wp-content/uploads/2018/03/chinook.zip&#39;
@@ -3374,7 +3374,7 @@ unzip(&quot;chinook.zip&quot;)</pre>
 
 <p>With this approach you can use SQL queries if you are comfortable with SQL</p>
 
-</article></slide><slide class=""><hgroup><h2>Querying the database with dply Syntax</h2></hgroup><article  id="querying-the-database-with-dply-syntax">
+</article></slide><slide class=""><hgroup><h2>Querying the database with dplyr Syntax</h2></hgroup><article  id="querying-the-database-with-dplyr-syntax">
 
 <p>One of the strengths of <code>dplyr</code> is that the same operation can be done using <code>dplyr</code>’s verbs instead of writing SQL. First, we select the table on which to do the operations by creating the <code>employee</code> object, and then we use the standard <code>dplyr</code> syntax as if it were a data frame.</p>
 
@@ -3399,7 +3399,7 @@ employees %&gt;%
 
 </article></slide><slide class=""><hgroup><h2>Lets use familiar <code>dplyr</code> commands to query the database</h2></hgroup><article  id="lets-use-familiar-dplyr-commands-to-query-the-database">
 
-<pre >head(employees, n = 10)</pre>
+<pre >head(employees, n = 8)</pre>
 
 <pre class = 'prettyprint lang-r'>employees %&gt;% 
   select(LastName, FirstName, Title, ReportsTo, Phone) %&gt;% 
