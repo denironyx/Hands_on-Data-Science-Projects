@@ -24,6 +24,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - SQL, OR Structured Query Language, is an incredible tool for querying and managing relational databases.
 
+- A relational database is a collection of information that organizes data in predefined relationships where data is stored in one or more tables of columns and rows.
+
 ## DBMS Ranking
 ![source - https://insights.stackoverflow.com/survey/2021#most-popular-technologies-database](img/Screenshot_119.png){width=100%}
 
